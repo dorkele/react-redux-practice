@@ -1,19 +1,54 @@
 // Import React and ReactDOM libraries
 import React from "react";
 import ReactDOM from "react-dom";
+import faker from "faker";
 
 // Create a React component
 const App = () => {
-    const buttonText = "Click me";
     return (
-        <div>
-            <label className="label" htmlFor="name">
-                Enter name:
-            </label>
-            <input id="name" type="text" />
-            <button style={{ backgroundColor: "black", color: "white" }}>
-                {buttonText}
-            </button>
+        <div className="ui container comments">
+            <div className="comment">
+                <a href="/" className="avatar">
+                    <img alt="avatar" src={faker.image.avatar()} />
+                </a>
+                <div className="content">
+                    <a href="/" className="author">
+                        Dora
+                    </a>
+                    <div className="metadata">
+                        <span className="date">Today at 6:00PM</span>
+                    </div>
+                    <div className="text">Nice picture, hon!</div>
+                </div>
+            </div>
+            <div className="comment">
+                <a href="/" className="avatar">
+                    <img alt="avatar" src={faker.image.avatar()} />
+                </a>
+                <div className="content">
+                    <a href="/" className="author">
+                        Dora
+                    </a>
+                    <div className="metadata">
+                        <span className="date">Today at 6:00PM</span>
+                    </div>
+                    <div className="text">Nice picture, hon!</div>
+                </div>
+            </div>
+            <div className="comment">
+                <a href="/" className="avatar">
+                    <img alt="avatar" src={faker.image.avatar()} />
+                </a>
+                <div className="content">
+                    <a href="/" className="author">
+                        Dora
+                    </a>
+                    <div className="metadata">
+                        <span className="date">Today at 6:00PM</span>
+                    </div>
+                    <div className="text">Nice picture, hon!</div>
+                </div>
+            </div>
         </div>
     );
 };
