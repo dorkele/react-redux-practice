@@ -10,7 +10,7 @@ const App = () => {
     return (
         <div className="ui container comments">
             <ApprovalCard>
-                <h4>Warning!</h4>
+                <h4>Warning</h4>
                 <div>Are you sure you want to do this?</div>
             </ApprovalCard>
             <ApprovalCard>
