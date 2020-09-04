@@ -14,7 +14,7 @@ class App extends React.Component {
 
     state = { lat: null, errorMessage: "" };
 
-    componentWillMount() {
+    componentDidMount() {
         window.navigator.geolocation.getCurrentPosition(
             //if it succeeds, the first argument:
             (position) => {
@@ -27,8 +27,8 @@ class App extends React.Component {
             }
         );
     }
-    // React says we have to define render!!
-    render() {
+
+    renderContent() {
         if (this.state.errorMessage && !this.state.lat) {
             return <div>Error: {this.state.errorMessage}</div>;
         }
@@ -37,7 +37,12 @@ class App extends React.Component {
             return <SeasonDisplay lat={this.state.lat} />;
         }
 
-        return <Spinner />;
+        return <Spinner message="Please accept location request" />;
+    }
+
+    // React says we have to define render!!
+    render() {
+        return <div>{this.renderContent()}</div>;
     }
 }
 
