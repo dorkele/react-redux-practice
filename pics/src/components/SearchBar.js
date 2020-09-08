@@ -14,7 +14,7 @@ class SearchBar extends React.Component {
                 <form onSubmit={this.onFormSubmit} className="ui form">
                     <div className="field">
                         <label>Image Search</label>
-                        {/* on input change withouth parentheses because with means we would 
+                        {/* on input change without parentheses because with means we would 
                         call it each time the component is rendered */}
                         <input
                             type="text"
