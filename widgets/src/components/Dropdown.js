@@ -5,7 +5,7 @@ const Dropdown = ({ label, options, selected, onSelectedChange }) => {
     const ref = useRef();
 
     // it should only run once bc we want to make sure we set up an event
-    // listener one time!
+    // listener only one time!
     useEffect(() => {
         const onBodyClick = (event) => {
             if (ref.current.contains(event.target)) {
