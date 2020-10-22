@@ -6,6 +6,7 @@ import {
     FETCH_STREAMS,
     EDIT_STREAM,
     DELETE_STREAM,
+    ADD_COMMENT,
 } from "./types";
 import streams from "../apis/streams";
 import history from "../history";

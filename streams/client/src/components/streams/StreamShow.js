@@ -5,6 +5,7 @@ import React from "react";
 import flv from "flv.js";
 import { connect } from "react-redux";
 import { fetchStream } from "../../actions";
+import CommentForm from "../comments/CommentForm";
 
 class StreamShow extends React.Component {
     constructor(props) {
@@ -71,6 +72,7 @@ class StreamShow extends React.Component {
                 <video ref={this.videoRef} style={{ width: "100%" }} controls />
                 <h1>{title}</h1>
                 <h5>{description}</h5>
+                <CommentForm />
             </div>
         );
     }
