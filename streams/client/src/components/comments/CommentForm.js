@@ -2,9 +2,20 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 
 class CommentForm extends React.Component {
+    componentDidUpdate() {
+        console.log("i updated");
+    }
+    renderError({ error, submitFailed }) {
+        if (submitFailed && error) {
+            return (
+                <div className="ui error message">
+                    <div className="header">{error}</div>
+                </div>
+            );
+        }
+    }
     renderInput = ({ input, label, meta }) => {
         //console.log(formProps);
-        //console.log(meta);
         return (
             <div className="field">
                 <label>{label}</label>
@@ -15,13 +26,13 @@ class CommentForm extends React.Component {
                     // umjesto toga, moze se ful skratiti u sljedece:
                     {...input}
                 />
-                <div>{meta.error}</div>
+                {this.renderError(meta)}
             </div>
         );
     };
 
     onSubmit = (formValues) => {
-        console.log(formValues);
+        this.props.onSubmit(formValues);
     };
 
     render() {
@@ -32,7 +43,7 @@ class CommentForm extends React.Component {
         return (
             <form
                 onSubmit={this.props.handleSubmit(this.onSubmit)}
-                className="ui form"
+                className="ui form error"
             >
                 <Field
                     name="username"

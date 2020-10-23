@@ -1,16 +1,26 @@
 {
-    "streams": [
+  "streams": [
+    {
+      "title": "Baby One More Time",
+      "description": "Britney",
+      "userId": "111790628386111932401",
+      "id": 4,
+      "comments": [
         {
-            "title": "Baby One More Time",
-            "description": "Britney",
-            "userId": "111790628386111932401",
-            "id": 4
-        },
-        {
-            "title": "Dora",
-            "description": "What is happening",
-            "userId": "111790628386111932401",
-            "id": 5
+          "username": "Dora",
+          "comment": "wow, really helpful",
+          "userId": "111790628386111932401",
+          "id": 1
         }
-    ]
+      ],
+      "username": "k",
+      "comment": "m"
+    },
+    {
+      "title": "Dora",
+      "description": "What is happening",
+      "userId": "111790628386111932401",
+      "id": 5
+    }
+  ]
 }

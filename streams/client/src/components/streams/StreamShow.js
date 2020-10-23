@@ -4,8 +4,9 @@ import React from "react";
 // video player
 import flv from "flv.js";
 import { connect } from "react-redux";
-import { fetchStream } from "../../actions";
+import { fetchStream, addComment } from "../../actions";
 import CommentForm from "../comments/CommentForm";
+import CommentList from "../comments/CommentList";
 
 class StreamShow extends React.Component {
     constructor(props) {
@@ -61,18 +62,29 @@ class StreamShow extends React.Component {
         this.player.load();
     }
 
+    onSubmit = (formValues) => {
+        const { id } = this.props.match.params;
+        const comments = {};
+        this.props.addComment(id, comments[formValues]);
+        console.log("this.props.stream: ", this.props.stream);
+    };
+
     render() {
         if (!this.props.stream) {
             return <div>Loading...</div>;
         }
+        //console.log(this.props.stream.comments);
 
-        const { title, description } = this.props.stream;
+        const { title, description, comments } = this.props.stream;
         return (
             <div>
                 <video ref={this.videoRef} style={{ width: "100%" }} controls />
                 <h1>{title}</h1>
                 <h5>{description}</h5>
-                <CommentForm />
+                {comments ? (
+                    <CommentList comments={this.props.stream.comments} />
+                ) : null}
+                <CommentForm onSubmit={this.onSubmit} />
             </div>
         );
     }
@@ -82,4 +94,6 @@ const mapStateToProps = (state, ownProps) => {
     return { stream: state.streams[ownProps.match.params.id] };
 };
 
-export default connect(mapStateToProps, { fetchStream })(StreamShow);
+export default connect(mapStateToProps, { fetchStream, addComment })(
+    StreamShow
+);

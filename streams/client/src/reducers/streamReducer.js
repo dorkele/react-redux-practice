@@ -5,6 +5,7 @@ import {
     CREATE_STREAM,
     EDIT_STREAM,
     DELETE_STREAM,
+    ADD_COMMENT,
 } from "../actions/types";
 
 export default (state = {}, action) => {
@@ -17,8 +18,11 @@ export default (state = {}, action) => {
             return { ...state, [action.payload.id]: action.payload };
         case EDIT_STREAM:
             return { ...state, [action.payload.id]: action.payload };
+        case ADD_COMMENT:
+            return { ...state, [action.payload.id]: action.payload };
         case DELETE_STREAM:
             return _.omit(state, action.payload);
+
         default:
             return state;
     }
