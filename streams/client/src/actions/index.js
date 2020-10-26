@@ -56,13 +56,12 @@ export const editStream = (id, formValues) => async (dispatch) => {
 export const addComment = (id, formValues) => async (dispatch, getState) => {
     const { userId } = getState().auth;
 
-    console.log("form values: ", formValues);
+    //console.log("form values: ", formValues);
     const response = await streams.patch(`/streams/${id}`, {
         ...formValues,
-        userId,
     });
 
-    console.log("response.data: ", response.data);
+    //console.log("response.data: ", response.data);
     dispatch({ type: ADD_COMMENT, payload: response.data });
 };
 

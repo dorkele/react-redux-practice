@@ -18,7 +18,7 @@ class CommentList extends React.Component {
         });
     }
     render() {
-        console.log(this.props.comments);
+        console.log("this.props.comments: ", this.props.comments);
 
         return (
             <div className="ui comments">
