@@ -64,8 +64,8 @@ class StreamShow extends React.Component {
 
     onSubmit = (formValues) => {
         const { id } = this.props.match.params;
-        const comments = {};
-        this.props.addComment(id, comments[formValues]);
+        const comments = { ...formValues };
+        this.props.addComment(id, comments);
         console.log("this.props.stream: ", this.props.stream);
     };
 

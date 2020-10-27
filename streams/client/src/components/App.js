@@ -32,11 +32,7 @@ const App = () => {
                             exact
                             component={StreamDelete}
                         />
-                        <Route
-                            path="/streams/:id"
-                            exact
-                            component={StreamShow}
-                        />
+                        <Route path="/streams/:id" component={StreamShow} />
                     </Switch>
                 </div>
             </Router>
