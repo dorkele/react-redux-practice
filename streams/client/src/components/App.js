@@ -9,6 +9,8 @@ import StreamShow from "./streams/StreamShow";
 import Header from "./Header";
 import history from "../history";
 
+////sta se dogada pls
+
 const App = () => {
     return (
         <div className="ui container">
